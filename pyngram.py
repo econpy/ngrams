@@ -5,7 +5,7 @@ from multiprocessing import Pool,cpu_count
 from operator import itemgetter
 
 
-def GoGadgetGo():
+def IterRows():
     for datarow in datarows:
         yield datarow.strip()
 
@@ -21,7 +21,7 @@ infile.close()
 
 for n in [1, 2, 3]:
     pool = Pool(processes=cpu_count())
-    go = GoGadgetGo()
+    iterrows = IterRows()
 
     print 'building full ngram list'
     # Make a shared counter that all processes can use
@@ -29,7 +29,7 @@ for n in [1, 2, 3]:
     # Chunk the data into 40000 rows per process at one time. This can be optimized
     N = 40000
     for i in range(len(datarows)//N+1):
-        g2 = pool.imap(get_ngrams, islice(go, N))
+        g2 = pool.imap(get_ngrams, islice(iterrows, N))
         for ngrams in g2:
             for ngram in ngrams:
                 counter.update({' '.join(ngram): 1})
