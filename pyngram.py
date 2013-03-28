@@ -18,6 +18,8 @@ def get_ngrams(thestr):
 # Accept the input file from the arguments
 inputfile = sys.argv[1]
 
+start_time = datetime.now()
+
 print 'reading the data into memory'
 infile = open(inputfile, 'r')
 datarows = infile.readlines()
