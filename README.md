@@ -1,4 +1,4 @@
-This script is a parallel processing and memory efficient script using only the Python standard library to counts ngrams in a txt file.
+This Python script uses the multiprocessing module to calculate ngrams in a txt file.
 
 # Example Use #
 Run the following command to calculate the 2 grams in a txt file called `sometextfile.txt`:
