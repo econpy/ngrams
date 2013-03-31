@@ -15,7 +15,7 @@ def get_ngrams(thestr):
     s = ' '.join(thestr.split()).split(' ')
     return [tuple(s[i:i+n]) for i in range(len(s)-n+1)]
 
-# Accept the input file from the arguments
+# Take the input file from the arguments
 inputfile = sys.argv[1]
 
 start_time = datetime.now()
