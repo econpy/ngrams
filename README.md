@@ -1,6 +1,6 @@
 This Python script uses the [multiprocessing]("http://docs.python.org/2/library/multiprocessing.html", "mulitprocessing") module to calculate ngrams in a txt file.
 
-# Example Use #
+## Example Use ##
 Calculate 2-grams in the txt file `meaning_of_life.txt`:
 
 ```bash
