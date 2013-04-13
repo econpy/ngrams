@@ -49,7 +49,7 @@ for i in range(numrows//N+1):
 print 'writting sorted dict of ngram sums to disk'
 outfile = '%sgrams.tsv' % n
 f = open(outfile, 'w')
-f.write('%sgram,count\n' % n)
+f.write('%sgram\tcount\n' % n)
 for gram in sorted(counter.iteritems(), key=itemgetter(1), reverse=True):
     f.write('%s\t%s\n' % (gram[0], gram[1]))
 f.close()
