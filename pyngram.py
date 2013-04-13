@@ -41,14 +41,15 @@ counter = Counter()
 # Chunk the data into 40000 rows per process at one time. This can be optimized
 N = 40000
 for i in range(numrows//N+1):
-    g2 = pool.imap(get_ngrams, islice(iterrows, N))
-    for ngrams in g2:
+    mapper = pool.imap(get_ngrams, islice(iterrows, N))
+    for ngrams in mapper:
         for ngram in ngrams:
             counter.update({' '.join(ngram): 1})
 
 print 'writting sorted dict of ngram sums to disk'
-outfile = '%sgrams.txt' % n
+outfile = '%sgrams.tsv' % n
 f = open(outfile, 'w')
+f.write('%sgram,count\n' % n)
 for gram in sorted(counter.iteritems(), key=itemgetter(1), reverse=True):
     f.write('%s\t%s\n' % (gram[0], gram[1]))
 f.close()
