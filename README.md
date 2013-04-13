@@ -4,7 +4,7 @@ This Python script uses the [multiprocessing]("http://docs.python.org/2/library/
 Calculate all the 3-grams in the txt file `HuckleberryFinn.txt`:
 
 ```bash
-python pyngrams.py HuckleberryFinn.txt 3
+python pyngram.py HuckleberryFinn.txt 3
 ```
 which will create an output file called `3grams.txt` with the sorted counts of 3-grams in [The Adventures of Huckleberry Finn](http://www.gutenberg.org/ebooks/76) by [Mark Twain](http://www.gutenberg.org/ebooks/author/53).
 
